@@ -1,13 +1,28 @@
 [left]
 
+priority = 10
 enter_command = ["swaylock", "-fc", "000000"]
-
 locations = ["top_left"]
-
 size = 3
+color = "green"
 
-timeout_ms = 250
 
-[left.output]
+# [top_exit]
 
-description = ""
+# exit_command = ["pkill", "-USR1", "waybar"]
+# locations = ["top"]
+# size = 15
+# margin = 100
+# color = "#0000ff"
+# timeout_ms = 1000
+
+
+# [top_enter]
+
+# priority = 1
+# enter_command = ["pkill", "-USR1", "waybar"]
+# locations = ["top"]
+# size = 1
+# margin = 100
+# # color = "red"
+# timeout_ms = 50

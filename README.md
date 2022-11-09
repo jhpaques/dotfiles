@@ -1,9 +1,6 @@
 # Dotfiles
 
-## Deployment
+## Color scheme
 
-To deploy the dotfiles:
+## Screenshots
 
-```bash
-stow -t ~ *
-```

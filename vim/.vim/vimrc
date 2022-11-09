@@ -1,0 +1,61 @@
+
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+source $VIMRUNTIME/../vimfiles/archlinux.vim
+
+source ~/.vim/bepo.vim
+
+filetype plugin on
+
+set mouse=a
+set cursorline
+
+" line numbers
+set number
+set relativenumber
+
+" folding
+set foldenable
+set foldmethod=indent
+set foldlevel=99
+
+" cursor 'margin' with top and bottom
+set scrolloff=10
+
+" auto utf-8
+set encoding=utf-8
+set fileencoding=utf-8
+
+" tab to spaces
+set tabstop=4
+set shiftwidth=4
+" set expandtab
+set softtabstop=4
+
+" colorise les nbsp (espaces insécables)
+highlight NbSp ctermbg=lightgray guibg=lightred
+match NbSp /\%xa0/
+
+" save with Ctrl-S
+noremap <C-s> :w<CR>
+
+" python PEP8
+augroup python_pep8
+    au BufNewFile,BufRead *.py
+                \ set tabstop=4
+                \ set softtabstop=4
+                \ set shiftwidth=4
+                \ set textwidth=79
+                \ set expandtab
+                \ set autoindent
+                \ set fileformat=unix
+augroup end
+
+" plugin ultisnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+" plugin vimtex
+let g:tex_flavor='latex'
+let g:vimtex_view_method = 'zathura'

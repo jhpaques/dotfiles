@@ -1,0 +1,9 @@
+[submodule "vim/.vim/pack/tpope/start/vim-commentary"]
+	path = vim/.vim/pack/tpope/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim/.vim/pack/tpope/start/commentary"]
+	path = vim/.vim/pack/tpope/start/commentary
+	url = https://tpope.io/vim/commentary.git
+[submodule "vim/.vim/pack/SirVer/start/ultisnips"]
+	path = vim/.vim/pack/SirVer/start/ultisnips
+	url = https://github.com/SirVer/ultisnips
