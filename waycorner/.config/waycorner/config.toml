@@ -1,0 +1,13 @@
+[left]
+
+enter_command = ["swaylock", "-fc", "000000"]
+
+locations = ["top_left"]
+
+size = 3
+
+timeout_ms = 250
+
+[left.output]
+
+description = ""
