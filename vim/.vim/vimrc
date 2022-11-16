@@ -29,12 +29,12 @@ set fileencoding=utf-8
 " tab to spaces
 set tabstop=4
 set shiftwidth=4
-" set expandtab
 set softtabstop=4
 
-" colorise les nbsp (espaces insécables)
-highlight NbSp ctermbg=lightgray guibg=lightred
-match NbSp /\%xa0/
+" Shift-à toggles between tabs and spaces
+noremap <M-à> :set invexpandtab<CR>
+noremap à :set invlist<CR>
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,nbsp:!,space:·
 
 " save with Ctrl-S
 noremap <C-s> :w<CR>

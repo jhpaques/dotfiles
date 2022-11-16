@@ -133,6 +133,7 @@ assign [app_id="firefox"] 2
 
     # Screenshots
     bindsym $mod+Shift+a exec grim -g "$(slurp)" "$HOME/Desktop/Screenshot_$(date -Iseconds).png"
+    bindsym $mod+Shift+b exec grim "$HOME/Desktop/Screenshot_$(date -Iseconds).png"
     #bindsym $mod+Shift+b exec $HOME/.scripts/screenshots/window-screenshot.sh
 
     # Drag floating windows by holding down $mod and left mouse button.
