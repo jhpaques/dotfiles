@@ -134,7 +134,6 @@ assign [app_id="firefox"] 2
     # Screenshots
     bindsym $mod+Shift+a exec grim -g "$(slurp)" "$HOME/Desktop/Screenshot_$(date -Iseconds).png"
     bindsym $mod+Shift+b exec grim "$HOME/Desktop/Screenshot_$(date -Iseconds).png"
-    #bindsym $mod+Shift+b exec $HOME/.scripts/screenshots/window-screenshot.sh
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -281,7 +280,7 @@ bindsym XF86KbdBrightnessUp exec xbacklight -ctrl smc::kbd_backlight -steps 3 +5
 bindsym XF86KbdBrightnessDown exec xbacklight -ctrl smc::kbd_backlight -steps 3 -5 && dunstify "Keyboard Backlight" -h int:value:$(xbacklight -ctrl smc::kbd_backlight -get)
 
 # volume
-set $volumescript ~/.scripts/volume.sh
+set $volumescript ~/.scripts/volume/volume.sh
 bindsym XF86AudioRaiseVolume exec $volumescript up
 bindsym XF86AudioLowerVolume exec $volumescript down
 bindsym $mod+XF86AudioRaiseVolume exec $volumescript up 1
@@ -290,10 +289,10 @@ bindsym XF86AudioMute exec $volumescript mute
 
 
 # emoji picker
-bindsym $mod+eacute exec BEMENU_OPTS=$bemenu_opts ~/.scripts/emoji-picker.sh
+bindsym $mod+eacute exec BEMENU_OPTS=$bemenu_opts ~/.scripts/emoji/emoji-picker.sh
 
 # KeepassXC
-bindsym $mod+p exec BEMENU_OPTS=$bemenu_opts ~/.scripts/keepassxc-menu.sh
+bindsym $mod+p exec BEMENU_OPTS=$bemenu_opts ~/.scripts/keepassxc/keepassxc-menu.sh
 
 
 ### Status Bar: (https://github.com/Alexays/Waybar)
@@ -308,7 +307,7 @@ exec waycorner
 ### Timers
 
 # darkmode toggle
-exec 'systemd-run --user --on-startup=60 --on-unit-active="15m" /usr/bin/pkill -USR1 zsh'
+# exec 'systemd-run --user --on-startup=60 --on-unit-active="15m" /usr/bin/pkill -USR1 zsh'
 
 
 include /etc/sway/config.d/*

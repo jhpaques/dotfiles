@@ -1,5 +1,7 @@
 # man 5 zathurarc
 
+set guioptions ""
+
 set default-fg "#ebdbb2"
 set default-bg "#282828"
 set statusbar-fg "#d5c4a1"

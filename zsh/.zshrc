@@ -3,7 +3,7 @@ fastfetch
 
 # Auto theme update
 TRAPUSR1() {
-	alias sunset="~/.scripts/sunset.sh"
+	alias sunset="~/.scripts/sunset/sunset.sh"
     # if vim is running
     vimpid="$(ps | grep -P "(vim|less)" | grep -oP "^ *[0-9]*" | xargs)"
     if [[ -n $vimpid ]]; then

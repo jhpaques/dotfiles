@@ -1,0 +1,1 @@
+grim -g "$(swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"')" "$HOME/Desktop/Screenshot_$(swaymsg -t get_tree | jq -r '.. | select(.focused?).app_id')_$(date -Iseconds).png"
