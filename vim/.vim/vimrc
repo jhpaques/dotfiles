@@ -8,6 +8,7 @@ source ~/.vim/bepo.vim
 filetype plugin on
 
 set mouse=a
+set ttymouse=sgr
 set cursorline
 
 " line numbers
@@ -39,22 +40,37 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,nbsp:!,space:·
 " save with Ctrl-S
 noremap <C-s> :w<CR>
 
+" custom gf command: creates file if it doesn't exist
+noremap gf :e <cfile><cr>
+
 " python PEP8
 augroup python_pep8
-    au BufNewFile,BufRead *.py
-                \ set tabstop=4
-                \ set softtabstop=4
-                \ set shiftwidth=4
-                \ set textwidth=79
-                \ set expandtab
-                \ set autoindent
-                \ set fileformat=unix
+    au Filetype python
+		\ setlocal tabstop=4
+		\ | setlocal softtabstop=4
+		\ | setlocal shiftwidth=4
+		\ | setlocal textwidth=79
+		\ | setlocal expandtab
+		\ | setlocal autoindent
+		\ | setlocal fileformat=unix
+augroup end
+
+augroup toml
+    au Filetype toml
+		\ setlocal tabstop=2
+		\ | setlocal softtabstop=2
+		\ | setlocal shiftwidth=2
+		\ | setlocal expandtab
+		\ | setlocal autoindent
+		\ | setlocal fileformat=unix
 augroup end
 
 " plugin ultisnips
+" let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+" call UltiSnips#RefreshSnippets()
 
 " plugin vimtex
 let g:tex_flavor='latex'

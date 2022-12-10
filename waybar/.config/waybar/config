@@ -1,3 +1,5 @@
+// # man 5 waybar
+
 {
     "height": 14, // Waybar height (to be removed for auto height)
     "spacing": 0, // Gaps between modules (4px)
@@ -29,9 +31,15 @@
         "tooltip-format": "{app}: {title}"
     },
     "sway/window": {
-        "format": "{app_id}",
-        "format-alt": "{title}",
-        "tooltip": false
+        "format": "{title}",
+        "format-alt": "{app_id}",
+        "tooltip": false,
+        "rewrite": {
+            "(.*) — Mozilla Firefox$": " $1",
+            "(.*) - foot$": " $1",
+            "^foot$": "",
+            "^Incrustation vidéo$": "",  // PiP viewer of firefox (lang: fr)
+        }
     },
     "clock": {
         "locale": "fr_FR.UTF-8",

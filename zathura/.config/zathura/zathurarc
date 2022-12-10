@@ -11,7 +11,9 @@ set font "scientifica normal 10"
 
 set selection-clipboard clipboard
 
-### BÉPO
+set window-title-basename true
+
+### BÉPO & keybinding
 map t scroll down
 map s scroll up
 map c scroll left
@@ -20,11 +22,8 @@ map r scroll right
 map <S-t> navigate down
 map <S-s> navigate up
 
-map a adjust-window best-fit
-map u adjust-window width
-
-# map f toggle_fullscreen
-# how to quit fullscreen ??
+map a adjust_window best-fit
+map u adjust_window width
 
 ### Recoloring
 set recolor true

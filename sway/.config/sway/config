@@ -11,8 +11,8 @@ set $mod Mod4
 # Home row direction keys, like vim
 set $left c
 set $down t
-set $up r
-set $right n
+set $up s
+set $right r
 # Your preferred terminal emulator
 set $term foot
 set $termfloating foot -a footfloating
@@ -43,8 +43,8 @@ set $laptop eDP-1
 set $monitor DP-2
 
 # disable laptop screen when closing lid
-bindswitch --reload --locked lid:on output $laptop disable
-bindswitch --reload --locked lid:off output $laptop enable
+# bindswitch --reload --locked lid:on output $laptop disable
+# bindswitch --reload --locked lid:off output $laptop enable
 
 # laptop screen
 output $laptop scale 2
@@ -85,6 +85,7 @@ input * {
         xkb_layout "fr"
         xkb_variant "bepo_afnor"
         xkb_options "caps:escape"
+        # xkb_options "caps:ctrl_modifier"
 }
 
 input * {
@@ -94,6 +95,15 @@ input * {
 ### Window decoration (no border) and gaps
 
 default_border none
+# no titlebar (kind of):
+font pango:monospace 0
+titlebar_border_thickness 0                                                     
+titlebar_padding 0
+# titlebar colors:
+client.focused #8ec07c #8ec07c #8ec07c
+client.focused_inactive #282828 #282828 #282828
+client.unfocused #1d2021 #1d2021 #1d2021
+
 gaps inner 5
 # gaps outer 20
 # smart_gaps inverse_outer
@@ -209,8 +219,8 @@ assign [app_id="firefox"] 2
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
+    bindsym $mod+j layout stacking
+    bindsym $mod+z layout tabbed
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
@@ -238,7 +248,7 @@ assign [app_id="firefox"] 2
     bindsym $mod+d scratchpad show
 
     # Sticky window
-    bindsym $mod+z sticky toggle
+    bindsym $mod+w sticky toggle
 #
 # Resizing containers:
 #
@@ -262,7 +272,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+k mode "resize"
+bindsym $mod+h mode "resize"
 
 
 ### Other keybindings (mostly scripts)

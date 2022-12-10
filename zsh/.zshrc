@@ -15,7 +15,7 @@ TRAPUSR1() {
     else
 		/usr/bin/theme.sh gruvbox
     fi
-    fg 2> /dev/null
+    fg > /dev/null 2>&1;
 }
 TRAPUSR1
 
@@ -48,9 +48,28 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# enable OSC-7
+function osc7 {
+	local LC_ALL=C
+	export LC_ALL
+
+	setopt localoptions extendedglob
+	input=( ${(s::)PWD} )
+	uri=${(j::)input/(#b)([^A-Za-z0-9_.\!~*\'\(\)-\/])/%${(l:2::0:)$(([##16]#match))}}
+	print -n "\e]7;file://${HOSTNAME}${uri}\e\\"
+}
+add-zsh-hook -Uz chpwd osc7
+
+# set window title to last command
+function preexec {
+	print -Pn "\e]0;${(q)1} - foot\e\\"
+}
+
+
 # Environment variables
 
 export EDITOR=vim
+export PATH="$PATH:$HOME/.local/bin"
 
 alias ls="ls --color=auto"
 
