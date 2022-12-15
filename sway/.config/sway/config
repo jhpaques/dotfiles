@@ -98,7 +98,7 @@ default_border none
 # no titlebar (kind of):
 font pango:monospace 0
 titlebar_border_thickness 0                                                     
-titlebar_padding 0
+titlebar_padding 2
 # titlebar colors:
 client.focused #8ec07c #8ec07c #8ec07c
 client.focused_inactive #282828 #282828 #282828

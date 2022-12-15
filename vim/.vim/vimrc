@@ -1,8 +1,8 @@
 
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
-source $VIMRUNTIME/../vimfiles/archlinux.vim
-
+" source $VIMRUNTIME/archlinux.vim
+source ~/.vim/archlinux.vim
 source ~/.vim/bepo.vim
 
 filetype plugin on
