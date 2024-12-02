@@ -1,0 +1,99 @@
+// # man 5 waybar
+
+{
+    "height": 14, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (4px)
+    "modules-left": ["sway/workspaces", "sway/scratchpad", "sway/mode", "sway/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["bluetooth", "network", "battery"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "persistent_workspaces": {
+            "1": ["eDP-1"]
+        }
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "sway/window": {
+        "format": "{title}",
+        "format-alt": "{app_id}",
+        "tooltip": false,
+        "rewrite": {
+            "(.*) — Mozilla Firefox$": " $1",
+            "(.*) - foot$": " $1",
+            "^foot$": "",
+            "^Incrustation vidéo$": "",  // PiP viewer of firefox (lang: fr)
+        }
+    },
+    "clock": {
+        "locale": "fr_FR.UTF-8",
+        "format": "{:%d %b %Y  %H:%M}",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d  %H:%M}"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        // "format-charging": "{capacity}% ",
+        // "format-plugged": "",
+        "format-alt": "{capacity}% {icon}",
+        "tooltip-format": "{time}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "⚠",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "Disconnected",
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "foot -d none -a footfloat iwctl"
+    },
+    "bluetooth": {
+        "format": "",
+        "tooltip-format": "{status}",
+        "tooltip-format-connected": "{device_alias}",
+        "on-click": "foot -d none -a footfloat bluetoothctl"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+}
+
