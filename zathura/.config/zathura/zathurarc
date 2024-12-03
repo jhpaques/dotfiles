@@ -1,0 +1,41 @@
+# man 5 zathurarc
+
+set guioptions ""
+
+set default-fg "#ebdbb2"
+set default-bg "#282828"
+set statusbar-fg "#d5c4a1"
+set statusbar-bg "#1d2021"
+
+set font "scientifica normal 10"
+
+set selection-clipboard clipboard
+
+set window-title-basename true
+
+### BÉPO & keybinding
+map t scroll down
+map s scroll up
+map c scroll left
+map r scroll right
+
+map <S-t> navigate down
+map <S-s> navigate up
+
+map a adjust_window best-fit
+map u adjust_window width
+
+### Recoloring
+set recolor true
+set recolor-lightcolor "#f9f5d7"
+set recolor-darkcolor "#504945"
+
+# gruvbox-dark-hard
+map <F1> focus_inputbar ":set recolor-lightcolor \#1d2021"
+map <F2> focus_inputbar ":set recolor-darkcolor \#d5c4a1"
+map d feedkeys "<F1><Return><F2><Return>"
+
+# gruvbox-light-hard
+map <F3> focus_inputbar ":set recolor-lightcolor \#f9f5d7"
+map <F4> focus_inputbar ":set recolor-darkcolor \#504945"
+map v feedkeys "<F3><Return><F4><Return>"

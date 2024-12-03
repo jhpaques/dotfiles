@@ -10,5 +10,5 @@
 ```bash
 git clone https://github.com/jhpaques/dotfiles
 cd dotfiles
-stow -t ~ *module*
+stow -t ~ <module>
 ```
